@@ -42,4 +42,8 @@ export class DashboardComponent implements OnInit {
     })
   }
 
+  public createImgPath = (serverPath: string) => { 
+    return `https://localhost:7058/${serverPath}`; 
+  }
+
 }

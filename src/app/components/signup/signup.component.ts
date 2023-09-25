@@ -11,11 +11,12 @@ import { Router } from '@angular/router';
   styleUrls: ['./signup.component.css']
 })
 export class SignupComponent implements OnInit {
-
+  isCreate!: boolean;
   public signUpForm!: FormGroup;
   type: string = 'password';
   isText: boolean = false;
-  eyeIcon:string = "fa-eye-slash"
+  eyeIcon:string = "fa-eye-slash";
+  response!: {dbPath: ''};
   constructor(private fb : FormBuilder, private toast: NgToastService, private auth: AuthService, private router: Router) { }
 
   ngOnInit() {
@@ -24,8 +25,10 @@ export class SignupComponent implements OnInit {
       lastName:['', Validators.required],
       userName:['', Validators.required],
       email:['', Validators.required],
-      password:['', Validators.required]
-    })
+      password:['', Validators.required],
+      imgPath: ['']
+    });
+    this.isCreate = true;
   }
 
   hideShowPass(){
@@ -40,7 +43,9 @@ export class SignupComponent implements OnInit {
       let signUpObj = {
         ...this.signUpForm.value,
         role:'',
-        token:''
+        token:'',
+        imgPath: this.response.dbPath
+        
       }
       this.auth.signUp(signUpObj)
       .subscribe({
@@ -60,5 +65,12 @@ export class SignupComponent implements OnInit {
       ValidateForm.validateAllFormFields(this.signUpForm); //{7}
     }
   }
+
+  
+  uploadFinished = (event:any) => { 
+    this.response = event; 
+  }
+
+
 
 }
