@@ -11,6 +11,7 @@ import { ResetPasswordComponent } from './components/reset-password/reset-passwo
 import { NgToastModule } from 'ng-angular-popup';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { TokenInterceptor } from './interceptors/token.interceptor';
+import { HomeComponent } from './components/home/home.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { TokenInterceptor } from './interceptors/token.interceptor';
     LoginComponent,
     SignupComponent,
     ResetPasswordComponent,
-    DashboardComponent
+    DashboardComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
