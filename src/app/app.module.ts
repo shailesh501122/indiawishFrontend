@@ -12,6 +12,9 @@ import { NgToastModule } from 'ng-angular-popup';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { TokenInterceptor } from './interceptors/token.interceptor';
 import { HomeComponent } from './components/home/home.component';
+import { UploadComponent } from './components/upload/upload.component';
+import { AddBlogComponent } from './components/Blogs/add-blog/add-blog.component';
+import { ListBlogComponent } from './components/Blogs/list-blog/list-blog.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +23,10 @@ import { HomeComponent } from './components/home/home.component';
     SignupComponent,
     ResetPasswordComponent,
     DashboardComponent,
-    HomeComponent
+    HomeComponent,
+    UploadComponent,
+    AddBlogComponent,
+    ListBlogComponent
   ],
   imports: [
     BrowserModule,

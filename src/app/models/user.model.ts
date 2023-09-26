@@ -7,5 +7,6 @@ export class User {
   accessToken?: string;
   refreshToken?:string;
   role?: string;
-  email?: string
+  email?: string;
+  imgPath?: string
 }
