@@ -10,7 +10,8 @@ import { BlogService } from 'src/app/services/Blog/blog.service';
   styleUrls: ['./add-blog.component.scss'],
 })
 export class AddBlogComponent implements OnInit {
-  blogForm!: FormGroup;
+  blogForm!: FormGroup; 
+  response!: {dbPath: ''};
   constructor(
     private blog: BlogService,
     private fb: FormBuilder,
@@ -22,14 +23,18 @@ export class AddBlogComponent implements OnInit {
     this.blogForm = this.fb.group({
       title: ['', Validators.required],
       description: ['', Validators.required],
+      imgPath: ['']
+    
     });
   }
+
 
   onSubmit() {
     if (this.blogForm.valid) {
       console.log(this.blogForm.value);
       let blogObj = {
         ...this.blogForm.value,
+        imgPath: this.response.dbPath
       };
       this.blog.addBlog(blogObj).subscribe({
         next: (res) => {
@@ -53,5 +58,9 @@ export class AddBlogComponent implements OnInit {
     } else {
       console.log('err');
     }
+  }
+
+  uploadFinished = (event:any) => { 
+    this.response = event; 
   }
 }

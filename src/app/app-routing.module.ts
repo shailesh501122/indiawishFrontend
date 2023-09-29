@@ -7,6 +7,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from './guards/auth.guard';
 import { HomeComponent } from './components/home/home.component';
 import { AddBlogComponent } from './components/Blogs/add-blog/add-blog.component';
+import { BlogDetailComponent } from './components/Blogs/blog-detail/blog-detail.component';
 
 const routes: Routes = [
  // {path:'', redirectTo:'home', pathMatch:'full'},
@@ -16,6 +17,7 @@ const routes: Routes = [
   {path:'dashboard', component:DashboardComponent, canActivate:[AuthGuard]},
   {path:'', component:HomeComponent,pathMatch:'full'},
   {path:'addblog', component:AddBlogComponent},
+  { path: 'blog/:id', component: BlogDetailComponent },
   // {
   //   path: 'blog/:id',
   //   component: BlogDetailComponent, // Create this component for individual blog posts

@@ -1,4 +1,4 @@
-<section class="blog-list">
+<!-- <section class="blog-list">
   <div class="container">
     <div class="row">
       <div class="col-md-8">
@@ -10,7 +10,81 @@
           <a [routerLink]="['/blog', blogItem.id]">Read more</a>
         </div>
       </div>
-      <!-- Sidebar or additional content can be added here -->
+    
     </div>
   </div>
-</section>
+</section> -->
+
+<nav class="navbar navbar-expand-lg  navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">CodeStream</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Blog</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Pricing</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link " href="#" >About Us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link " href="#" >Contack Us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link " href="#" >Career</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+
+<div class="ultimate-post-kit-container">
+  <div class="upk-alter-grid">
+		<div class="upk-post-grid upk-post-layout-1">
+			<div class="upk-post-grid-item"  *ngFor="let blogItem of blogList">
+				<div class="upk-post-grid-item-box">
+					<div class="upk-blog-image-wrapper">
+						<div class="upk-main-image">
+                <img  class="upk-blog-image" [src]="blogItem.imgPath ? createImgPath(blogItem.imgPath) : ''" alt="post image" >
+                 </div>
+					</div>
+					<div   class="upk-blog-box-content">
+						<div >
+							<!-- <div class="upk-blog-tags">
+								<span><a href="#" rel="category tag">Travel</a></span>
+							</div> -->
+							<h2 class="upk-blog-title-wrap">
+                   <a class="upk-blog-title" [routerLink]="['/blog', blogItem.id]" >{{ blogItem.title }}</a>
+                </h2>
+							<div class="upk-blog-desc-wrap">
+								<div class="upk-blog-desc">
+									<p>{{ blogItem.description | slice:0:50  }}</p>
+								</div>
+							</div>
+							<div class="upk-blog-post-meta">
+								<div class="upk-blog-author">
+									<a class="author-name" href="#">Shailesh Singh</a>
+								</div>
+								<div class="upk-blog-date">
+									<span class="date">{{ blogItem.dateCreated | date }}</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>	
+		</div>
+	</div>
+  
+
+  
