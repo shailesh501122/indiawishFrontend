@@ -3,4 +3,5 @@ export class BlogModel {
     title?:string;
     description?:string;
     dateCreated?:string;
+    imgPath?:string
 }

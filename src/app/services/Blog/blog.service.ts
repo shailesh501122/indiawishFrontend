@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 import { BlogModel } from 'src/app/models/Blog/blog.model';
 
 @Injectable({
@@ -16,4 +17,9 @@ export class BlogService {
   GetAllBlog(){
     return this.http.get<any>(`${this.baseUrl}/getblogs`)
   }
+  getBlogById(id: string): Observable<any> {
+    const url = `${this.baseUrl}/getblog/${id}`;
+    return this.http.get(url);
+  }
+
 }

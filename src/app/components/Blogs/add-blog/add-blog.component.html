@@ -8,6 +8,10 @@
             <label for="exampleFormControlTextarea1" class="form-label">Description</label>
             <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" formControlName="description"></textarea>
           </div>
+          <div>  <app-upload
+            (onUploadFinished)="uploadFinished($event)"
+          ></app-upload></div>
           <button type="submit" class="btn btn-primary"> Publish</button>
         </form>
 </div>
+

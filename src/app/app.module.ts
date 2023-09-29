@@ -15,6 +15,8 @@ import { HomeComponent } from './components/home/home.component';
 import { UploadComponent } from './components/upload/upload.component';
 import { AddBlogComponent } from './components/Blogs/add-blog/add-blog.component';
 import { ListBlogComponent } from './components/Blogs/list-blog/list-blog.component';
+import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
+import { BlogDetailComponent } from './components/Blogs/blog-detail/blog-detail.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,8 @@ import { ListBlogComponent } from './components/Blogs/list-blog/list-blog.compon
     HomeComponent,
     UploadComponent,
     AddBlogComponent,
-    ListBlogComponent
+    ListBlogComponent,
+    BlogDetailComponent
   ],
   imports: [
     BrowserModule,
@@ -34,7 +37,8 @@ import { ListBlogComponent } from './components/Blogs/list-blog/list-blog.compon
     ReactiveFormsModule,
     FormsModule,
     NgToastModule,
-    HttpClientModule
+    HttpClientModule,
+    CKEditorModule
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS,
